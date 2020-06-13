@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title> Calculadora </title>
+    <style>
+        /* Local onde está inserido todo o código css */
+        
+        body {
+            background-color: rgb(218, 208, 243);
+        }
+        /* Altera a cor de fundo do meu site */
+        
+        form legend1 {
+            padding: 6px;
+            margin: 10px;
+            border: solid cyan 1.5px;
+            font-size: 90%;
+            background-color: rgba(255, 130, 146, 0.979);
+        }
+        /*Altera o primeiro tópico "Calcular" */
+        
+        form legend2 {
+            padding: 6px;
+            margin: 10px;
+            border: solid rgb(240, 252, 80) 1.5px;
+            font-size: 90%;
+            background-color: rgba(148, 236, 192, 0.979);
+        }
+        /* Altera o segundo tópico "Resultado" */
+    </style>
+</head>
+
+<body>
+
+    <script language=javascript type="text/javascript">
+        now = new Date
+        document.write("São exatamente: " + now.getHours() + ":" + now.getMinutes())
+    </script>
+    <!-- Esse código funciona para mostrar a hora atual por meio do construtor Date
+        get.Hour() pega a hora atual e getMinutes() pega os minutos atuais  -->
+
+    <center>
+
+        <img src=" mensagem1.jpeg " width="400 " height="180 ">
+        <!-- Imagem de  boas vindas -->
+        <br>
+
+        </br>
+        <!-- Quebra de linha -->
+        <form name="calcform " method="post " action>
+
+            <legend1>Calculadora</legend1>
+
+            <label for="valor1"> Digite o valor 1: </label>
+            <input type="text" name="valor1" id="valor1" />
+            <!-- campo onde sera digitado o primeiro valor por meio do input do tipo texto
+            o input serve para a interação com o usário que digitará os valores -->
+            <label for="valor2">Digite o valor 2: </label>
+            <input type="text" name="valor2" id="valor2" />
+            <!-- campo onde sera digitado o segundo valor -->
+            <label for="oper">Selecione a operação:</label>
+            <select name="oper" id="oper">
+                <option value="somar">Somar</option>
+                <option value="subtrair">Subtrair</option>
+                <option value="multiplicar">Multiplifcar</option>
+                <option value="dividir">Dividir</option>
+            </select>
+            <!-- operadores disponiveis para a escolha do usuario por meio do select
+             select é uma "lista suspensa", está sendo utilizada para que o usuário possa escolher qual opreção ele quer realizar-->
+            <br></br>
+            <legend2>Resultado</legend2>
+
+            <input type="button" value="Calcular" class="botao" onClick="calcular(document.calcform.oper.value)" />
+            <input type="text" name="res" id="res">
+            <!-- botão do tipo button e onclick: realiza uma ação quando o usuário clica nele 
+                Está "chamando" a função javascript que passa os valores digitados como argumento -->
+            </fieldset>
+        </form>
+        <br>
+
+
+
+        </br>
+
+        <p>
+            <font size="3,5" face="Verdana"> >>Calculadora para cálculos simples: Sejam eles de adição, subtração, multiplicação ou divisão!
+            </font>
+        </p>
+
+    </center>
+    <!-- <center> foi usado para centralizar as informações da página -->
+
+    <script>
+        var x;
+        var nome = prompt("Qual é o seu nome? ");
+        do {
+            x = prompt("Digite qualquer número: \nNunca desista, continue tentando :)");
+        } while (x % 2 === 0);
+        alert("Agradecemos a sua escolha! Seja bem vindo(a) " + nome + "!");
+        /* Uma ~brincadeira~ onde o usuario apenas entra se digitar um numero ímpar
+         e caso digite numeros pares, a pergunta segue se repetindo  */
+
+        function calcular(oper) {
+            var valor1 = document.calcform.valor1.value;
+            var valor2 = document.calcform.valor2.value;
+            /* Valores digitados pelos usuários pelos campos input
+             Serão utiizados para realizar as operações por meio do if-else
+             assim que o usuário digitar os dois valor e apertar em calcular, ocorrerão os testes para ver qual foi a operação solicitada */
+            if (oper == "somar ") {
+                var res = parseInt(valor1) + parseInt(valor2);
+            } else {
+                if (oper == "subtrair ") {
+                    var res = valor1 - valor2;
+                } else {
+                    if (oper == "multiplicar ") {
+                        var res = valor1 * valor2;
+                    } else {
+                        /* operação da divisão */
+                        var res = valor1 / valor2;
+                    }
+                }
+            }
+            document.calcform.oper.value = res;
+            /* após realizar a operação, a função armazenará o valor em 'res'
+                 document.calcform.res.value está recebendo o valor de res  */
+        }
+
+        let Especf = {
+            nome: "Jonh leswik",
+            idade: 42,
+            formação: "Bacharel",
+            contato: "jslwik@hotmil.com.br",
+            local: "São Paulo, Itú"
+        };
+        Console.log("Projeto deenvolvido por: " + Especf.nome + "\nEncontrado pelo: " + Especf.contato)
+            /* objeto criado com dados e informações do "criador" da página 
+            uma tentativa de tentar utilizar objeto e mostrar apenas os dados soliciadors*/
+    </script>
+</body>
+
+</html>
