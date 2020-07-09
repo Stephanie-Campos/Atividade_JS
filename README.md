@@ -1,2 +1,2 @@
 # Atividade_JS
-  Código de uma calculadora que usei função, condicioanis, laços de repetição, váriaveis, e objeto.
+  Código de uma calculadora em foi usado função, condicioanis, laço de repetição, váriaveis e objeto.
